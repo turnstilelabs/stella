@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Stella Benchmark Initiative</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <!-- MathJax Configuration for Custom Commands -->
+  <script>
+    MathJax = {
+      tex: {
+        macros: {
+          mulambda: '{\\mu_{\\lambda}}', // Defines \mulambda as mu_lambda
+          l: '{l}',                     // Defines \l as l
+          1: '{\\mathbf{1}}'              // Defines \1 as a bold 1
+        }
+      }
+    };
+  </script>
+  
+  <!-- MathJax Script -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Link to your CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Stella</h1>
+      <h2 class="hero-subtitle">Benchmarking the Unseen Universe of Mathematics</h2>
+      <p class="hero-text">
+        AI models are benchmarked on mathematical folklore, not frontier research. We believe they should be challenged by the real frontier of research: the vast, unseen "dark matter" of technical lemmas that form the logical backbone of every great result.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="mission" class="manifesto">
+      <h2>The Manifesto: Why Stella Exists</h2>
+      <p>
+        The benchmarks that guide AI in mathematics are fundamentally broken. They measure performance on a narrow class of problems, failing to capture the actual intellectual labor of a research mathematician. <br>
+        To get closer to the real practice of research, aiming for Millennium Prize problems is a non-starter. Progress doesn't happen in giant leaps; it happens one clever idea at a time. That's why we focus on technical lemmas: they are the tangible, tactical steps that represent the actual, day-to-day work of creating new mathematics.
+      </p>
+      <p>
+        <strong>Stella is the initiative to fix this.</strong> Standing for <strong>S</strong>et of <strong>Te</strong>chnica<strong>l</strong> <strong>L</strong>emm<strong>a</strong>s, our mission is to build the first benchmark curated by and for mathematicians—one that values the tangible, tactical steps that are the true heart of discovery.
+      </p>
+    </section>
+
+    <section id="definition" class="definition-section">
+      <h2>What is a Technical Lemma?</h2>
+      <div class="definition-card">
+        <div class="definition-header">
+          <strong>Definition.</strong> (Technical Lemma)
+        </div>
+        <div class="definition-body">
+          A statement that occurs naturally in a mathematician's work. While part of a more complex theory, it has **minimal theoretical overhead**: a graduate student in an adjacent field should be able to understand the question without needing hundreds of pages of prerequisites, making it a perfect, tractable challenge.
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="examples">
+      <h2>Some Examples of Technical Lemmas</h2>
+      <div class="lemma-grid">
+        <!-- NEW EXAMPLE 1 -->
+        <div class="lemma-card">
+          <p class="lemma-statement">
+            Fix a sequence of finite or countable measurable spaces \((\Omega_n)_{n\ge 1}\) 
+            and contiguous probability measures \(\eta_n\) and \(\tilde\eta_n\) on \((\Omega_n)_{n\geq 1}\).
+            Fix a family \(\{a_{x,n}:n\ge 1,x\in \Omega_n\}\) of uniformly bounded non-negative real numbers.
+            Then, 
+            \[\sum_{x\in \Omega_n} a_{x,n}\, \eta_n(x)\xrightarrow[n\to \infty]{} 0\iff \sum_{x\in \Omega_n} a_{x,n}\, \tilde\eta_n(x)\xrightarrow[n\to \infty]{} 0\,.\]
+          </p>
+          <div class="lemma-meta">
+            <span>Combinatorics</span>
+            <span class="separator">&middot;</span>
+            <span class="citation" title="Hollom et al., Monotonicity of Random Regular Graphs">
+              Hollom et al., <a href="https://arxiv.org/abs/2505.22875" target="_blank" rel="noopener noreferrer">Monotonicity of Random Regular Graphs</a></span>
+          </div>
+        </div>
+        <div class="lemma-card">
+          <p class="lemma-statement">
+            Let \(\mulambda\) be the perturbation measure. We have
+            \begin{align}
+            \label{mulambda0} & \mulambda \preceq 
+            \begin{cases}
+            \frac{1}{l} & |x| \leq 2l, \\
+            \frac{\sqrt{\lambda} l}{x^2 \sqrt{\lambda-|x|}} & |x| \geq 2l
+            \end{cases}, \\
+            \label{mulambda1} 
+            & \mulambda^{(\1)} \preceq \begin{cases}
+            \frac{1}{l^2} & |x| \leq 2l, \\
+            \frac{l}{|x| \sqrt{\lambda} (\lambda - |x|)^{3/2}} + \frac{\sqrt{\lambda} l}{|x|^3 \sqrt{\lambda-|x|}} & |x| \geq 2l
+            \end{cases}.
+            \end{align}
+          </p>
+          <div class="lemma-meta">
+            <span>Probability</span>
+            <span class="separator">&middot;</span>
+            <span class="citation" title="T. Leblé, CLT for the Sine-beta process">
+              T. Leblé, <a href="https://arxiv.org/abs/1809.03448" target="_blank" rel="noopener noreferrer">CLT for the Sine-beta process</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <h2>Become a Contributor</h2>
+      <p class="join-text">
+        Your insight is our most valuable asset. The "dark matter" of your work—the clever argument, the non-obvious step, the lemma that challenged you—can help guide the future of AI. Join us in building a benchmark that reflects the true nature of mathematical discovery.
+      </p>
+      <a href="" class="cta">Contribute a Lemma</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Turnstile Labs. Building the future of mathematical reasoning.</p>
+  </footer>
+
+</body>
+</html>
