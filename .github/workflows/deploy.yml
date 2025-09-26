@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches:
@@ -10,30 +9,43 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Replace placeholder with secret 🤫
         env:
           SHEET_URL: ${{ secrets.SHEET_BEST_URL }}
         run: |
-          # This command modifies the script.js file ONLY inside the temporary runner
+          echo "Original script.js content:"
+          grep -n "SHEET_BEST_URL" script.js || echo "Placeholder not found"
+          
+          # Replace the placeholder
           sed -i "s|__SHEET_BEST_URL_PLACEHOLDER__|${SHEET_URL}|g" script.js
-          echo "✅ Placeholder replaced in the temporary workspace."
-      
+          
+          echo "Modified script.js content:"
+          grep -n "SHEET_BEST_URL" script.js || echo "No SHEET_BEST_URL found after replacement"
+          
+          echo "✅ Placeholder replaced in the workspace."
+
       - name: Cache Busting 💥
         run: |
-          # Get the unique commit hash
           VERSION=$(git rev-parse --short HEAD)
-          # This modifies the index.html file ONLY inside the temporary runner
           sed -i "s|src=\"script.js\"|src=\"script.js?v=$VERSION\"|g" index.html
-          echo "✅ Cache busting applied in the temporary workspace."
-        
-      - name: Deploy to GitHub Pages 🚀
-        uses: peaceiris/actions-gh-pages@v3
+          echo "✅ Cache busting applied."
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
