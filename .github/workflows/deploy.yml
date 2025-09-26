@@ -13,9 +13,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Replace placeholder with secret 🤫
+        env:
+          SHEET_URL: ${{ secrets.SHEET_BEST_URL }}
         run: |
-          sed -i "s|__SHEET_BEST_URL_PLACEHOLDER__|${{ secrets.SHEET_BEST_URL }}|g" script.js
-        
+          sed -i "s|__SHEET_BEST_URL_PLACEHOLDER__|$SHEET_URL|g" script.js
+          
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
