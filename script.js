@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalButtonText = submitBtn.textContent;
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
-
-      const SHEET_BEST_URL = 'https://api.sheetbest.com/sheets/f1879eff-5ab9-4ea3-8360-d0fca31a7881';
+  
+      const SHEET_BEST_URL = '__SHEET_BEST_URL_PLACEHOLDER__';
 
       const data = {
         timestamp: new Date().toISOString(),
