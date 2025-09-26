@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Stella Benchmark Initiative</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+
+  <script>
+    MathJax = {
+      tex: {
+        macros: {
+          mulambda: '{\\mu_{\\lambda}}',
+          l: '{l}',
+          1: '{\\mathbf{1}}'
+        }
+      }
+    };
+  </script>
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Stella</h1>
+      <h2 class="hero-subtitle">Benchmarking the Unseen Universe of Mathematics</h2>
+      <p class="hero-text">
+        AI models are benchmarked on mathematical folklore, not frontier research. We believe they should be challenged by the real frontier of research: the vast, unseen "dark matter" of technical lemmas that form the logical backbone of every great result.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="mission" class="manifesto">
+      <h2>A Benchmark of Authentic Mathematics</h2>
+      <p>
+        The benchmarks that guide AI in mathematics are fundamentally broken. They measure performance on a narrow class of problems, failing to capture the actual intellectual labor of a research mathematician. To get closer to the real practice of research, aiming for Millennium Prize problems is a non-starter. Progress doesn't happen in giant leaps; it happens one clever idea at a time. That's why we focus on technical lemmas: they are the tangible, tactical steps that represent the actual, day-to-day work of creating new mathematics.
+      </p>
+      <p>
+        <strong>Stella is the initiative to fix this.</strong> Standing for <strong>S</strong>et of <strong>Te</strong>chnica<strong>l</strong> <strong>L</strong>emm<strong>a</strong>s, our mission is to build the first <strong>open, community-driven benchmark</strong> curated by and for mathematicians—one that values the tangible, tactical steps that are the true heart of discovery.
+      </p>
+    </section>
+
+    <section id="definition" class="definition-section">
+      <h2>What is a Technical Lemma?</h2>
+      <div class="definition-card">
+        <div class="definition-header">
+          <strong>Definition.</strong> (Technical Lemma)
+        </div>
+        <div class="definition-body">
+          A statement that occurs naturally in a mathematician's work. While part of a more complex theory, it has <strong>minimal theoretical overhead</strong>: a graduate student in an adjacent field should be able to understand the question without needing hundreds of pages of prerequisites, making it a perfect, tractable challenge.
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="examples">
+      <h2>Some Examples of Technical Lemmas</h2>
+      <div class="lemma-grid">
+        <div class="lemma-card">
+          <h3>Contiguity of Probability Measures</h3>
+          <p class="lemma-statement">
+            Fix a sequence of finite or countable measurable spaces \((\Omega_n)_{n\ge 1}\) 
+            and contiguous probability measures \(\eta_n\) and \(\tilde\eta_n\) on \((\Omega_n)_{n\geq 1}\).
+            Fix a family \(\{a_{x,n}:n\ge 1,x\in \Omega_n\}\) of uniformly bounded non-negative real numbers.
+            Then, 
+            \[\sum_{x\in \Omega_n} a_{x,n}\, \eta_n(x)\xrightarrow[n\to \infty]{} 0\iff \sum_{x\in \Omega_n} a_{x,n}\, \tilde\eta_n(x)\xrightarrow[n\to \infty]{} 0\,.\]
+          </p>
+          <div class="lemma-meta">
+            <span>Graph Theory & Probability</span>
+            <span class="separator">&middot;</span>
+            <span class="citation" title="Hollom et al., Monotonicity of Random Regular Graphs">
+              Hollom et al., <a href="https://arxiv.org/abs/2505.22875" target="_blank" rel="noopener noreferrer">Monotonicity of Random Regular Graphs</a>
+            </span>
+          </div>
+        </div>
+        <div class="lemma-card">
+          <h3>Bounds on a Perturbation Measure</h3>
+          <p class="lemma-statement">
+            Let \(\mulambda\) be the perturbation measure. We have
+            \begin{align}
+            \label{mulambda0} & \mulambda \preceq 
+            \begin{cases}
+            \frac{1}{l} & |x| \leq 2l, \\
+            \frac{\sqrt{\lambda} l}{x^2 \sqrt{\lambda-|x|}} & |x| \geq 2l
+            \end{cases}, \\
+            \label{mulambda1} 
+            & \mulambda^{(\1)} \preceq \begin{cases}
+            \frac{1}{l^2} & |x| \leq 2l, \\
+            \frac{l}{|x| \sqrt{\lambda} (\lambda - |x|)^{3/2}} + \frac{\sqrt{\lambda} l}{|x|^3 \sqrt{\lambda-|x|}} & |x| \geq 2l
+            \end{cases}.
+            \end{align}
+          </p>
+          <div class="lemma-meta">
+            <span>Random Matrix Theory</span>
+            <span class="separator">&middot;</span>
+            <span class="citation" title="T. Leblé, CLT for the Sine-beta process">
+              T. Leblé, <a href="https://arxiv.org/abs/1809.03448" target="_blank" rel="noopener noreferrer">CLT for the Sine-beta process</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="join" class="join">
+      <h2>Become a Contributor</h2>
+      <p class="join-text">
+        Your insight is our most valuable asset. The "dark matter" of your work—the clever argument, the non-obvious step, the lemma that challenged you—can help guide the future of AI. Join us in building a benchmark that reflects the true nature of mathematical discovery.
+      </p>
+      <button id="contribute-btn" class="cta">Contribute a Lemma</button>
+    </section>
+
+    <!-- MODAL FOR CONTRIBUTION -->
+    <div id="contribution-modal" class="modal-overlay" style="display: none;">
+      <div class="modal-content">
+        <button class="modal-close">&times;</button>
+        <h2>Contribute a Lemma to Stella</h2>
+        <p class="modal-subtitle">Your insight is what makes this project possible. Thank you for helping build this resource.</p>
+
+        <div class="tab-container">
+          <button class="tab-link active" data-tab="tab-reference">By Reference</button>
+          <button class="tab-link" data-tab="tab-manual">Contribute Manually</button>
+        </div>
+
+        <form id="contribution-form" action="" method="POST">
+          <div id="tab-reference" class="tab-content active">
+            <div class="form-group">
+              <label for="reference-paper">Paper Reference (arXiv link, DOI, or title)</label>
+              <input type="text" id="reference-paper" name="paperReference" placeholder="e.g., arXiv:1809.03448">
+            </div>
+            <div class="form-group">
+              <label for="reference-location">Statement Location</label>
+              <input type="text" id="reference-location" name="statementLocation" placeholder="e.g., Lemma 3.1">
+            </div>
+          </div>
+
+          <div id="tab-manual" class="tab-content" style="display: none;">
+            <div class="form-group">
+              <label for="manual-statement">Statement (LaTeX supported)</label>
+              <textarea id="manual-statement" name="manualStatement" rows="6" placeholder="e.g., Let \( (M, g) \) be a complete..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="manual-proof">Proof (Optional)</label>
+              <textarea id="manual-proof" name="manualProof" rows="4" placeholder="Optional: provide a proof sketch..."></textarea>
+            </div>
+          </div>
+          
+          <hr class="form-divider">
+
+          <div class="form-group">
+            <label for="comment">Your Story (Optional, but highly valued!)</label>
+            <textarea id="comment" name="comment" rows="3" placeholder="Why is this lemma interesting?"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="cta">Submit Contribution</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>The Stella Benchmark is an open-source initiative. All contributions are licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p>
+    <p>&copy; 2025 Turnstile Labs. Building the future of mathematical reasoning.</p>
+  </footer>
+  
+  <script src="script.js"></script>
+
+</body>
+</html>

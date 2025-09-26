@@ -1,0 +1,369 @@
+/* --- Global Reset & Variables --- */
+:root {
+  --background: #121212;
+  --surface1: #1a1a1a;
+  --surface2: #242424;
+  --primary-text: #e0e0e0;
+  --secondary-text: #aaaaaa;
+  --accent: #ffdd57;
+  --accent-hover: #ffc800;
+  --border-color: #333333;
+}
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--background);
+  color: var(--primary-text);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+h1, h2, h3 {
+  font-family: 'Inter', sans-serif;
+  color: var(--primary-text);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: none;
+}
+
+/* --- Hero Section --- */
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: -2px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 10px 0 20px;
+  color: var(--primary-text);
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* --- Call to Action Buttons --- */
+.cta {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--background);
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border: 2px solid var(--accent);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.cta.secondary {
+    background: transparent;
+    color: var(--accent);
+}
+.cta.secondary:hover {
+    background: var(--accent);
+    color: var(--background);
+}
+
+
+/* --- Sections --- */
+.manifesto {
+  background: var(--surface1);
+}
+
+.manifesto p {
+  max-width: 700px;
+  margin: 0 auto 1em;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+.examples h2, .definition-section h2, .join h2 {
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+/* THIS IS THE NEW RULE TO FIX CENTERING */
+.examples {
+  max-width: 960px;
+}
+
+.lemma-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  text-align: left;
+}
+
+.lemma-card {
+  background: var(--surface1);
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.lemma-card h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.lemma-statement {
+    flex-grow: 1;
+    overflow-x: auto; /* Handle long equations on small screens */
+}
+
+.lemma-meta {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+  color: var(--secondary-text);
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.citation {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+
+/* --- Definition Section --- */
+.definition-section {
+  text-align: left;
+}
+
+.definition-section h2 {
+  text-align: center;
+}
+
+.definition-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.definition-header {
+  font-family: 'Inter', sans-serif;
+  background: var(--surface2);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.definition-body {
+  padding: 25px 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.definition-body strong {
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+
+/* --- Join Section --- */
+.join-text {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    color: var(--secondary-text);
+    font-size: 1.1rem;
+}
+
+/* --- NEW MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: var(--surface1);
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--secondary-text);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-subtitle {
+  text-align: center;
+  color: var(--secondary-text);
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
+.tab-container {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.tab-link {
+  font-family: 'Inter', sans-serif;
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px; /* Align with the container border */
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.tab-link:hover {
+  color: var(--primary-text);
+}
+
+.tab-link.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+  color: var(--primary-text);
+  font-family: 'Source Serif 4', serif;
+  font-size: 1rem;
+  box-sizing: border-box; /* Important for width calculation */
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 30px 0;
+}
+
+.form-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--secondary-text);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 3rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .lemma-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
