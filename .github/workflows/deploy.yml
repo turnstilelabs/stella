@@ -9,6 +9,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # This permission is still necessary
     permissions:
       contents: write
 
@@ -21,12 +22,24 @@ jobs:
           SHEET_URL: ${{ secrets.SHEET_BEST_URL }}
         run: |
           sed -i "s|__SHEET_BEST_URL_PLACEHOLDER__|$SHEET_URL|g" script.js
+          echo "✅ Placeholder in script.js replaced."
       
       - name: Cache Busting 💥
         run: |
           VERSION=$(git rev-parse --short HEAD)
           sed -i "s|src=\"script.js\"|src=\"script.js?v=$VERSION\"|g" index.html
-        
+          echo "✅ Cache busting applied to index.html."
+
+      # --- THIS IS THE NEW, CRITICAL STEP ---
+      - name: Commit modified files 🚀
+        run: |
+          # Configure the git user for the commit
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add index.html script.js
+          git commit -m "Build: Inject secrets and cache-bust [skip ci]" || echo "No changes to commit"
+          git push
+
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
