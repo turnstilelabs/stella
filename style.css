@@ -237,15 +237,61 @@ a:hover {
 
 
 /* --- Council Section --- */
-.council-section {
+.leadership-section {
   background: var(--surface1);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 60px 20px;
+}
+
+/* --- Founder Block Styles --- */
+.founder-block {
+  max-width: 650px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  background: var(--background);
+  border-radius: 8px;
+  padding: 30px 40px; /* More horizontal padding */
+  margin-bottom: 60px;
+}
+
+.founder-quote {
+  font-family: 'Source Serif 4', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--primary-text);
+  margin: 0;
+  text-align: left;
+}
+
+.founder-attribution {
+  text-align: right;
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+
+.founder-title-inline {
+  color: var(--accent);
+  font-weight: 400; /* Lighter weight for the affiliation */
+}
+
+/* --- Council Block Styles --- */
+.council-block {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.council-block h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .council-intro {
   max-width: 600px;
-  margin: -20px auto 40px;
+  margin: 0 auto 40px;
   color: var(--secondary-text);
   font-size: 1.1rem;
 }
@@ -255,8 +301,6 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px 40px;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .council-member {
@@ -268,11 +312,10 @@ a:hover {
 
 .member-name {
   color: var(--primary-text);
-  text-decoration: none; /* No underline by default */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-/* NEW hover state for the link */
 .member-name:hover {
   color: var(--accent);
   text-decoration: underline;
@@ -284,7 +327,6 @@ a:hover {
   margin-left: 0.5em;
 }
 
-/* Updated rule for the placeholder text */
 .member-name-placeholder {
     font-family: 'Inter', sans-serif;
     font-size: 1.2rem;
