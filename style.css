@@ -174,6 +174,7 @@ a:hover {
   min-width: 0;
 }
 
+
 /* --- Definition Section --- */
 .definition-section {
   text-align: left;
@@ -224,6 +225,7 @@ a:hover {
   font-weight: 600;
   color: var(--primary-text);
 }
+
 
 /* --- Leadership & Council Section --- */
 .leadership-section {
@@ -322,7 +324,6 @@ a:hover {
     color: var(--secondary-text);
 }
 
-
 /* --- Join Section --- */
 .join-text {
     max-width: 650px;
@@ -342,7 +343,7 @@ footer {
 }
 
 
-/* --- THIS IS THE MISSING PART: MODAL STYLES --- */
+/* --- MODAL STYLES --- */
 .modal-overlay {
   position: fixed;
   top: 0;
