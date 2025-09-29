@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // --- 1. Element Selection ---
   const contributeBtn = document.getElementById('contribute-btn');
   const modal = document.getElementById('contribution-modal');
   
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = contributionForm.querySelector('button[type="submit"]');
 
 
+  // --- 2. Modal Handling ---
   const openModal = () => {
     modal.style.display = 'flex';
   };
@@ -40,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  // --- 3. Tab Switching Logic ---
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => t.classList.remove('active'));
@@ -58,14 +61,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  if (contributionForm) {
-    contributionForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
+  // --- 4. Form Submission Logic ---
+  
+  if (submitBtn) {
+    submitBtn.addEventListener('click', async (event) => {
+      event.preventDefault(); // Still important to prevent any default button behavior
 
       const originalButtonText = submitBtn.textContent;
       submitBtn.textContent = 'Submitting...';
       submitBtn.disabled = true;
-  
+
       const SHEET_BEST_URL = '__SHEET_BEST_URL_PLACEHOLDER__';
 
       const data = {
@@ -78,9 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         comment: document.getElementById('comment').value
       };
       
-      console.log("Data being sent to Sheet.best:", JSON.stringify(data, null, 2));
-
-
       try {
         const response = await fetch(SHEET_BEST_URL, {
           method: 'POST',
@@ -92,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
           throw new Error(`Network response was not ok: ${response.statusText}`);
         }
 
+        // --- Success Handling ---
         submitBtn.textContent = 'Success ✓';
         
         setTimeout(() => {
@@ -102,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
 
       } catch (error) {
+        // --- Error Handling ---
         console.error('Submission failed:', error);
         alert('Sorry, there was an error submitting your contribution. Please check your connection and try again.');
         submitBtn.textContent = originalButtonText;
@@ -109,5 +113,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
 });
